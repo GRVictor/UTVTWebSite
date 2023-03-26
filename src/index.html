@@ -1,13 +1,119 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>UTVTwebsite</title>
-  <base href="/">
+  <title>Universidad Tecnológica del Valle de Toluca</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">
+      <img src="../assets/img/logo.png" width="200" height="80">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['inicio']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['acerca-utvt']">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['Oferta-Educativa']">Oferta Educativa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['estudiantes']">Estudiantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['docente']">Docente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['vinculacion']">Vinculación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['tramites-servicios']">Trámites y Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://saiiut.utvtol.edu.mx/">SAIIUT</a>
+        </li>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- body -->
+
+<body class="mat-typography">
   <app-root></app-root>
 </body>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row p-3 bg-secondary text-white">
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5">Conoce el estado</p>
+        <ul class="list-state">
+          <li><a class="text-white text-decoration-none" href="http://edomex.gob.mx" target="_blank">Portal del Gobierno
+              del Estado de México</a></li>
+          <li><a class="text-white text-decoration-none" href="http://www.secogem.gob.mx/SAM/sit_atn_mex.asp"
+              target="_blank">Quejas y Denuncias</a></li>
+          <li><a class="text-white text-decoration-none" href="http://cemer.edomex.gob.mx" target="_blank">Comisión
+              Estatal de Mejora Regulatoria</a></li>
+          <li><a class="text-white text-decoration-none" href="https://www.ipomex.org.mx/ipo3/lgt/indice/utvtol.web"
+              target="_blank">Información Pública de oficio Mexiquense</a></li>
+          <li><a class="text-white text-decoration-none" href="http://www.saimex.org.mx/saimex/ciudadano/login.page"
+              target="_blank">Solicitud de Información</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5">Acerca del sitio</p>
+        <ul class="list-about">
+          <li><a class="text-white text-decoration-none" href="//utvt.edomex.gob.mx/contactanos" target="_self">Contáctanos</a></li>
+          <li><a class="text-white text-decoration-none" href="//utvt.edomex.gob.mx/sitemap" target="_self">Mapa del sitio</a></li>
+          <li><a class="text-white text-decoration-none" href="//utvt.edomex.gob.mx/legales" target="_self">Avisos legales</a></li>
+          <li><a class="text-white text-decoration-none" href="//utvt.edomex.gob.mx/acerca_sitio" target="_self">Acerca del sitio</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5">Contacto</p>
+        <ul class="list-contact">
+          <li><a class="text-white text-decoration-none" href="https://goo.gl/maps/VVdKLyfSMk81cjj27">Carretera del Departamento del D.F. km 7.5, Santa María Atarasquillo Municipio de Lerma C. P. 52044</a></li>
+          <li><span class="text-white text-decoration-none">Tel. (728) 2859048/2859536/2859552</span></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <p class="h5">Enlaces interesantes</p>
+        <ul class="list-links">
+          <li><a class="text-white text-decoration-none" href="https://sarcoem.org.mx/sarcoem/ciudadano/login.page" target="_blank">SARCOEM</a></li>
+          <li><a class="text-white text-decoration-none" href="https://www.saimex.org.mx/saimex/ciudadano/login.page" target="_blank">SAIMEX</a></li>
+          <li><a class="text-white text-decoration-none" href="https://www.transparenciaestadodemexico.org.mx/denciu/denuncia/insert.page" target="_blank">DENUNCIAS IPOMEX</a></li>
+          <li><a class="text-white text-decoration-none" href="/sites/utvt.edomex.gob.mx/files/files/AVISO%20INTEGRAL%20UTVT.pdf" target="_blank">AVISO DE PRIVACIDAD</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </html>
+<base href="/">
