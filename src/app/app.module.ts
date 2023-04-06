@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,12 @@ import { TramitesComponent } from './tramites/tramites.component';
 import { DocenteComponent } from './docente/docente.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogTarjetaComponent } from './blog-tarjeta/blog-tarjeta.component';
+import { BlogDetalleComponent } from './blog-detalle/blog-detalle.component';
+import { BlogService } from './service/blog.service';
+import { BlogFormComponent } from './blog-form/blog-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,15 +27,22 @@ import { OfertaComponent } from './oferta/oferta.component';
     TramitesComponent,
     DocenteComponent,
     EstudiantesComponent,
-    OfertaComponent
+    OfertaComponent,
+    BlogComponent,
+    BlogTarjetaComponent,
+    BlogDetalleComponent,
+    BlogFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [BlogService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BlogComponent } from './blog/blog.component';
 import { VinculacionComponent } from './vinculacion/vinculacion.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { DocenteComponent } from './docente/docente.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { BlogDetalleComponent } from './blog-detalle/blog-detalle.component';
+import { BlogFormComponent } from './blog-form/blog-form.component';
 
 const routes: Routes = [
   {
-    path: 'vinculacion',
-    component: VinculacionComponent
+    //cuando se pide la ruta raiz, se muestra el componente BlogComponent
+    path: '',
+    component: BlogComponent,
   },
   {
-    path: 'tramites',
-    component: TramitesComponent
+    path: 'blog/:id',
+    component: BlogDetalleComponent,
+  },
+  {
+    path: 'blog',
+    component: BlogFormComponent,
   },
   {
     path: 'docente',
@@ -24,9 +32,17 @@ const routes: Routes = [
     component: EstudiantesComponent
   },
   {
+    path: 'vinculacion',
+    component: VinculacionComponent,
+  },
+  {
     path: 'oferta',
-    component: OfertaComponent
-  }
+    component: OfertaComponent,
+  },
+  {
+    path: 'tramites',
+    component: TramitesComponent
+  },
 ];
 
 @NgModule({
