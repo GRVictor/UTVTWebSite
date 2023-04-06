@@ -16,16 +16,16 @@ export class BlogFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      id: 4,
-      title: 'This is my fourth post in the api writting in spring boot',
-      content: 'This is my fourth post in the api writting in spring boot',
-      links: 'localhost:8080/api/post/4',
+      id: '',
+      title: '',
+      content: '',
+      links: '',
       status: true,
       user: this.formBuilder.group({
-        id: 1,
+        id: '',
       }),
       category: this.formBuilder.group({
-        id: 1,
+        id: '',
       }),
     });
 
@@ -52,6 +52,7 @@ export class BlogFormComponent implements OnInit {
   }
   onSubmit() {
     let postData = this.form.value;
+    console.log(postData);
     this.http
       .post('http://localhost:8080/api/post/create', postData)
       .subscribe((response) => {
