@@ -1,110 +1,45 @@
 <div class="container">
-<<<<<<< HEAD
-<div class="row">
-  <div class="card col-md-6 mx-auto mt-5 mb-5"  style="width: 22rem;">
-    <h2 class="card-header">Fromulario Blog</h2>
-    <div class="card-body">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-        <label class="col-auto">
-          Title:
-          <input type="text" formControlName="title" required class="form-control" />
-        </label>
-        <label class="col-auto">
-          Content:
-          <textarea formControlName="content" required class="form-control"></textarea>
-        </label>
-        <label class="col-auto">
-          Aditional links:
-          <input type="text" formControlName="links" class="form-control" />
-        </label>
+  <div class="row">
+    <div class="card col-md-6 mx-auto mt-5 mb-5" style="width: 22rem;">
+      <h2 class="card-header">Fromulario Blog</h2>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+          <label class="col-auto">
+            Title:
+            <input type="text" formControlName="title" required class="form-control" />
+          </label>
+          <label class="col-auto">
+            Content:
+            <textarea formControlName="content" required class="form-control"></textarea>
+          </label>
+          <label class="col-auto">
+            Aditional links:
+            <input type="text" formControlName="links" class="form-control" />
+          </label>
 
-        <label class="col-auto">
-          User:
-          <select formControlName="user.id" required class="form-control">
-            <option *ngFor="let user of users" [value]="user.id" class="form-control">
-              {{ user.name }}
-            </option>
-          </select>
-        </label>
-        <label class="col-auto">
-          Category:
-          <select formControlName="category.id" required class="form-control">
-            <option *ngFor="let category of categories" class="form-select" [value]="category.id">
-              {{ category.name }}
-            </option>
-          </select>
-        </label>
-        <br>
+          <label class="col-auto">
+            User:
+            <select formControlName="user" required class="form-control">
+              <option *ngFor="let user of users" [value]="user.id" class="form-control">
+                {{ user.name }}
+              </option>
+            </select>
+          </label>
+          <label class="col-auto">
+            Category:
+            <select formControlName="category" required class="form-control">
+              <option *ngFor="let category of categories" class="form-select" [value]="category.id">
+                {{ category.name }}
+              </option>
+            </select>
+          </label>
+          <br>
 
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-outline-primary mt-3">Crear Blog</button>
-        </div>
-      </form>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-outline-primary mt-3">Crear Blog</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-=======
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-    <label>
-      Title:
-      <input
-        type="text"
-        formControlName="title"
-        required
-        class="form-control"
-      />
-    </label>
-    <label>
-      Content:
-      <textarea
-        formControlName="content"
-        required
-        class="form-control"
-      ></textarea>
-    </label>
-    <label>
-      Links:
-      <input
-        type="text"
-        formControlName="links"
-        required
-        class="form-control"
-      />
-    </label>
-    <label>
-      Status:
-      <input
-        type="checkbox"
-        formControlName="status"
-        required
-        class="form-control"
-      />
-    </label>
-    <label>
-      User:
-      <select formControlName="user" required class="form-control">
-        <option
-          *ngFor="let user of users"
-          [value]="user.id"
-          class="form-control"
-        >
-          {{ user.name }}
-        </option>
-      </select>
-    </label>
-    <label>
-      Category:
-      <select formControlName="category" required class="form-control">
-        <option
-          *ngFor="let category of categories"
-          class="form-control"
-          [value]="category.id"
-        >
-          {{ category.name }}
-        </option>
-      </select>
-    </label>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
->>>>>>> d7ba85f1335e7ad9b997871d1c2fc4edeada2c20
-</div>
 </div>
