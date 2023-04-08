@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-form',
@@ -12,21 +13,16 @@ export class BlogFormComponent implements OnInit {
   users: any[] | undefined;
   categories!: any[];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      id: '',
       title: '',
       content: '',
       links: '',
       status: true,
-      user: this.formBuilder.group({
-        id: '',
-      }),
-      category: this.formBuilder.group({
-        id: '',
-      }),
+      user: '',
+      category: '',
     });
 
     this.getUsers();
@@ -52,11 +48,17 @@ export class BlogFormComponent implements OnInit {
   }
   onSubmit() {
     let postData = this.form.value;
+    //obtiene el usuario seleccionado en el formulario con el valor de user y lo manda al backend como un objeto con el id del usuario pero convierte a number
+    postData.user = { id: Number(postData.user) };
+    postData.category = { id: Number(postData.category) };
+
     console.log(postData);
+
     this.http
       .post('http://localhost:8080/api/post/create', postData)
       .subscribe((response) => {
         console.log(response);
+        this.router.navigate(['/']);
       });
   }
   
