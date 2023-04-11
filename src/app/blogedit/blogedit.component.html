@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="card col-md-6 mx-auto mt-5 mb-5" style="width: 30rem;">
+            <h2 class="card-header" style="text-align: center;">Formulario Blog</h2>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="editPost()" class="form">
+                    <label class="col-12">
+                        Titulo:
+                        <input type="text" formControlName="title" required class="form-control" />
+                    </label>
+                    <br>
+                    <label class="col-12">
+                        Contenido:
+                        <textarea formControlName="content" required class="form-control"></textarea>
+                    </label>
+                    <br>
+                    <label class="col-12">
+                        Links adicionales:
+                        <input type="text" formControlName="links" class="form-control" />
+                    </label>
+                    <br>
+                    <label class="col-12">
+                        Usuario:
+                        <select formControlName="user" required class="form-control">
+                            <option *ngFor="let user of users" [value]="user.id" class="form-control">
+                                {{ user.name }}
+                            </option>
+                        </select>
+                    </label>
+                    <br>
+                    <label class="col-12">
+                        Categoria:
+                        <select formControlName="category" required class="form-control">
+                            <option *ngFor="let category of categories" class="form-select" [value]="category.id">
+                                {{ category.name }}
+                            </option>
+                        </select>
+                    </label>
+                    <br>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-outline-success mt-3">Crear Blog</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

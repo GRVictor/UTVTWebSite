@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../service/blog.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-blog-detalle',
   templateUrl: './blog-detalle.component.html',
@@ -12,7 +12,8 @@ export class BlogDetalleComponent {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private router: Router
   ) {
     this.activeRoute.params.subscribe((params) => {
       const id = params['id'];
@@ -28,5 +29,9 @@ export class BlogDetalleComponent {
 
   goBack() {
     window.history.back();
-    }
+  }
+  goEdit() {
+    this.router.navigate(['/blogedit']);
+  }
+
 }

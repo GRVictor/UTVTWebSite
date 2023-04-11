@@ -18,6 +18,7 @@ import { BlogDetalleComponent } from './blog-detalle/blog-detalle.component';
 import { BlogService } from './service/blog.service';
 import { BlogFormComponent } from './blog-form/blog-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogeditComponent } from './blogedit/blogedit.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BlogTarjetaComponent,
     BlogDetalleComponent,
     BlogFormComponent,
+    BlogeditComponent
   ],
   imports: [
     BrowserModule,
@@ -45,4 +47,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   providers: [BlogService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

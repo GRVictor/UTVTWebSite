@@ -8,6 +8,7 @@ import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { BlogDetalleComponent } from './blog-detalle/blog-detalle.component';
 import { BlogFormComponent } from './blog-form/blog-form.component';
+import { BlogeditComponent } from './blogedit/blogedit.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'tramites',
     component: TramitesComponent
+  },
+  {
+    path: 'blogedit',
+    component: BlogeditComponent
   },
 ];
 
